@@ -60,5 +60,5 @@ combined_dataset <- rbind(train_dataset, test_dataset)
 melted_dataset <- melt(combined_dataset, id = c("subject_id", "activity_name"), measure.vars = feature_names[target_features])
 tidy_dataset <- dcast(melted_dataset, subject_id+activity_name ~ variable, mean)
 
-write.table(tidy_dataset, file = "./tidy-dataset.csv", row.names = F)
+write.table(tidy_dataset, file = "./tidy-dataset.txt", row.names = F)
 
